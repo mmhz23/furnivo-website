@@ -27,10 +27,10 @@
   </head>
   <body>
     <header>
-      <div class="logo">
+      <a href="#" class="logo">
         <img src="assets/images/favicon.png" alt="Furnivo Logo" class="logo__img" />
         <span class="logo__txt">Furnivo</span>
-      </div>
+      </a>
 
       <nav class="navbar">
         <a href="#" class="navbar__link">Home</a>
@@ -235,42 +235,83 @@
         <h2>Testimonials</h2>
 
         <div class="testimonials__content">
-          <button type="button" aria-label="back" class="testimonials__btn">
+          <button type="button" aria-label="back" class="testimonials__btn testimonials__btn--left">
             <img src="assets/icons/arrow-left.svg" alt="" />
           </button>
 
-          <p>
-            The quality of the furniture we purchased from this store has completely transformed our
-            living space. From the moment we stepped inside, the staff was attentive without being
-            pushy, guiding us toward options that perfectly matched our aesthetic. The craftsmanship
-            on the new sofa is superb; every seam is perfect, and the fabric feels incredibly
-            durable yet luxurious. Delivery and setup were handled efficiently and professionally.
-            Highly recommended for anyone seeking premium comfort and style!
-          </p>
+          <div class="testimonials__slider">
+            <div class="testimonials__slide">
+              <blockquote class="testimonials__text">
+                The quality of the furniture we purchased from this store has completely transformed
+                our living space. From the moment we stepped inside, the staff was attentive without
+                being pushy, guiding us toward options that perfectly matched our aesthetic. The
+                craftsmanship on the new sofa is superb; every seam is perfect, and the fabric feels
+                incredibly durable yet luxurious. Delivery and setup were handled efficiently and
+                professionally. Highly recommended for anyone seeking premium comfort and style!
+              </blockquote>
 
-          <button type="button" aria-label="next" class="testimonials__btn">
+              <figure class="testimonials__author">
+                <img src="assets/images/anniestanley.png" alt="" />
+
+                <figcaption>
+                  <span>Annie Stanley</span>
+                  <p>CEO, Co-Founder, XYZ Inc.</p>
+                </figcaption>
+              </figure>
+            </div>
+
+            <div class="testimonials__slide">
+              <blockquote class="testimonials__text">
+                As someone who’s moved five times in six years, I’ve bought a lot of flat‑pack
+                furniture. Nothing comes close to the solid, heirloom‑feel pieces from this store.
+                The bedframe I ordered is built like a tank, yet the design is modern and airy. What
+                impressed me most was the free design consultation—they helped me fit a home office
+                into a tiny alcove using pieces I never would’ve considered. Delivery came right on
+                schedule, and the delivery crew assembled everything under an hour. Worth every
+                penny.
+              </blockquote>
+
+              <figure class="testimonials__author">
+                <img src="assets/images/richwilson.png" alt="" />
+
+                <figcaption>
+                  <span>Rich Wilson</span>
+                  <p>Software Engineer & Frequent Mover</p>
+                </figcaption>
+              </figure>
+            </div>
+
+            <div class="testimonials__slide">
+              <blockquote class="testimonials__text">
+                I came in looking for a single bookshelf and left with an entire reading nook
+                designed by their team. The attention to detail is unmatched; they measured the
+                space, suggested the perfect wood tone to match my existing floor, and even
+                recommended a complementary armchair. Assembly was included and the installers
+                treated my home with respect, wearing shoe covers and cleaning up afterward. Months
+                later, the shelves are still perfectly level and the finish hasn’t faded. This is
+                the kind of local store you become loyal to for life.
+              </blockquote>
+
+              <figure class="testimonials__author">
+                <img src="assets/images/ameliecooper.png" alt="" />
+
+                <figcaption>
+                  <span>Amelie Cooper</span>
+                  <p>Architect & Interior Writer</p>
+                </figcaption>
+              </figure>
+            </div>
+          </div>
+
+          <button
+            type="button"
+            aria-label="next"
+            class="testimonials__btn testimonials__btn--right"
+          >
             <img src="assets/icons/arrow-right.svg" alt="" />
           </button>
-        </div>
 
-        <figure class="testimonials__author">
-          <img src="assets/images/user.png" alt="" />
-
-          <figcaption>
-            <span>Michelle Anna</span>
-            <span>CEO, Co-Founder, XYZ Inc.</span>
-          </figcaption>
-        </figure>
-
-        <div class="testimonials__indicators">
-          <div class="indicator"></div>
-          <div class="indicator indicator--active"></div>
-          <div class="indicator"></div>
-          <div class="indicator"></div>
-          <div class="indicator"></div>
-          <div class="indicator"></div>
-          <div class="indicator"></div>
-          <div class="indicator"></div>
+          <div class="testimonials__indicators"></div>
         </div>
       </section>
 
