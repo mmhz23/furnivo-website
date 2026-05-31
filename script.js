@@ -1,6 +1,6 @@
 "use strict";
 
-// TODO: add scrolling behavior for all buttons
+// TODO: add functionality for all buttons
 
 const headerEl = document.querySelector("header");
 const navbarEl = document.querySelector(".navbar");
@@ -14,51 +14,45 @@ const indicators = document.querySelector(".testimonials__indicators");
 
 const headerHeight = headerEl.offsetHeight;
 
+// Mobile navigation toggle
 mobileNavbarButton.addEventListener("click", function () {
-  navbarEl.classList.toggle("mobile-navbar");
-
-  if (navbarEl.classList.contains("mobile-navbar")) {
-    document.body.classList.add("overflow-y-hidden");
-  } else {
-    document.body.classList.remove("overflow-y-hidden");
-  }
+  const isOpen = navbarEl.classList.toggle("mobile-navbar");
+  document.body.classList.toggle("overflow-y-hidden", isOpen);
 });
 
+// Smooth scrolling for navbar links
 navbarEl.addEventListener("click", function (e) {
+  const link = e.target.closest(".navbar__link");
+  if (!link) return;
   e.preventDefault();
 
-  if (e.target.classList.contains("navbar__link")) {
-    const href = e.target.getAttribute("href");
+  const href = link.getAttribute("href");
 
-    if (href === "#")
-      window.scrollTo({
-        top: 0,
-        behavior: "smooth",
-      });
-
-    if (href !== "#" && href.startsWith("#")) {
-      const section = document.querySelector(href);
-      const offsetTop = section.offsetTop - headerHeight;
-
-      if (href === "#contact-us") {
-        section.scrollIntoView({ behavior: "smooth", block: "center" });
-      } else {
-        window.scrollTo({
-          top: offsetTop,
-          behavior: "smooth",
-        });
-      }
-    }
-
-    if (navbarEl.classList.contains("mobile-navbar")) {
-      navbarEl.classList.remove("mobile-navbar");
-      document.body.classList.remove("overflow-y-hidden");
-    }
-
-    e.target.blur();
+  if (href === "#") {
+    window.scrollTo({ top: 0, behavior: "smooth" });
   }
+
+  if (href !== "#" && href.startsWith("#")) {
+    const section = document.querySelector(href);
+    if (!section) return;
+
+    if (href === "#contact-us") {
+      section.scrollIntoView({ behavior: "smooth", block: "center" });
+    } else {
+      const offsetTop = section.offsetTop - headerHeight;
+      window.scrollTo({ top: offsetTop, behavior: "smooth" });
+    }
+  }
+
+  if (navbarEl.classList.contains("mobile-navbar")) {
+    navbarEl.classList.remove("mobile-navbar");
+    document.body.classList.remove("overflow-y-hidden");
+  }
+
+  link.blur();
 });
 
+// Intersection Observer for sticky header and scroll-to-top button
 const heroObserver = new IntersectionObserver(
   function (entries) {
     const [entry] = entries;
@@ -76,21 +70,22 @@ const heroObserver = new IntersectionObserver(
 );
 heroObserver.observe(heroSectionEl);
 
+// Scroll-to-top button click
 scrollToTopButton.addEventListener("click", () => {
   window.scrollTo({ top: 0, behavior: "smooth" });
 });
 
+// Testimonials slider logic
 const slider = function () {
   let curSlide = 0;
   const maxSlide = slides.length;
 
   const createIndicators = function () {
-    slides.forEach(function (_, i) {
-      indicators.insertAdjacentHTML(
-        "beforeend",
-        `<button class="indicator" data-slide="${i}"></button>`,
-      );
-    });
+    const markup = [...slides].reduce(
+      (acc, _, i) => acc + `<button class="indicator" data-slide="${i}"></button>`,
+      "",
+    );
+    indicators.insertAdjacentHTML("beforeend", markup);
   };
 
   const activateIndicator = function (slide) {
@@ -136,14 +131,16 @@ const slider = function () {
   testimonialsRightButton.addEventListener("click", nextSlide);
 
   document.addEventListener("keydown", function (e) {
-    e.key === "ArrowLeft" ? prevSlide() : nextSlide();
+    if (e.key === "ArrowLeft") prevSlide();
+    else if (e.key === "ArrowRight") nextSlide();
   });
 
   indicators.addEventListener("click", function (e) {
     if (e.target.classList.contains("indicator")) {
       const { slide } = e.target.dataset;
-      goToSlide(slide);
-      activateIndicator(slide);
+      curSlide = +slide;
+      goToSlide(curSlide);
+      activateIndicator(curSlide);
     }
   });
 };
