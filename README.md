@@ -10,7 +10,7 @@ You can view a live demo of this project here: [Furnivo](https://furnivo-hz.verc
 
 ## Screenshot
 
-![Furnivo](https://github.com/mmhz23/furnivo/blob/main/furnivo.png)
+![Furnivo](https://github.com/mmhz23/furnivo-website/blob/main/furnivo.png?raw=true)
 
 ## Tech Stack
 
