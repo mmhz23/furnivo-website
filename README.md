@@ -10,7 +10,7 @@ You can view a live demo of this project here: [Furnivo](https://furnivo-hz.verc
 
 ## Screenshot
 
-![Furnivo](https://github.com/mmhosseinzadeh9190/furnivo/blob/main/furnivo.png)
+![Furnivo](https://github.com/mmhz23/furnivo/blob/main/furnivo.png)
 
 ## Tech Stack
 
@@ -22,4 +22,4 @@ You can view a live demo of this project here: [Furnivo](https://furnivo-hz.verc
 
 ## Author
 
-- [@mmhosseinzadeh9190](https://github.com/mmhosseinzadeh9190)
+- [@mmhz23](https://github.com/mmhz23)
