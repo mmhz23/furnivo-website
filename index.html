@@ -23,18 +23,25 @@
 
     <link rel="stylesheet" href="style.css" />
 
+    <!-- <script defer src="advanced-dom.js"></script> -->
     <script defer src="script.js"></script>
   </head>
   <body>
     <header>
       <a href="#" class="logo">
-        <img src="assets/images/favicon.png" alt="Furnivo Logo" class="logo__img" />
+        <img
+          src="assets/images/favicon.png"
+          alt="Furnivo Logo"
+          class="logo__img"
+          designer="Hossein"
+          data-theme="light"
+        />
         <span class="logo__txt">Furnivo</span>
       </a>
 
       <nav class="navbar">
         <a href="#" class="navbar__link">Home</a>
-        <a href="#about-us" class="navbar__link">About us</a>
+        <a href="#about-us" id="about-us-link" class="navbar__link">About us</a>
         <a href="#services" class="navbar__link">Services</a>
         <a href="#blog" class="navbar__link">Blog</a>
         <a href="#contact-us" class="navbar__link">Contact us</a>
@@ -62,7 +69,9 @@
     <main>
       <section id="hero" class="hero">
         <div class="hero__cta">
-          <h1 class="hero__cta__title">Modern Interior Design Studio</h1>
+          <h1 class="hero__cta__title" onclick="alert('Heading clicked (inline onclick)')">
+            Modern Interior Design Studio
+          </h1>
           <!-- TODO: add paragraph -->
           <!-- <p class="hero__cta__description"></p> -->
           <div class="hero__cta__actions">

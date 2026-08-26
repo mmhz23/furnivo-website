@@ -1,7 +1,5 @@
 "use strict";
 
-// TODO: add functionality for all buttons
-
 const headerEl = document.querySelector("header");
 const navbarEl = document.querySelector(".navbar");
 const mobileNavbarButton = document.querySelector(".actions__button--mobile-nav");
@@ -14,13 +12,15 @@ const indicators = document.querySelector(".testimonials__indicators");
 
 const headerHeight = headerEl.offsetHeight;
 
-// Mobile navigation toggle
+// TODO: Add functionality for all buttons
+
+// Mobile Navigation Toggle
 mobileNavbarButton.addEventListener("click", function () {
   const isOpen = navbarEl.classList.toggle("mobile-navbar");
   document.body.classList.toggle("overflow-y-hidden", isOpen);
 });
 
-// Smooth scrolling for navbar links
+// Smooth Scrolling for Navbar Links
 navbarEl.addEventListener("click", function (e) {
   const link = e.target.closest(".navbar__link");
   if (!link) return;
@@ -52,7 +52,7 @@ navbarEl.addEventListener("click", function (e) {
   link.blur();
 });
 
-// Intersection Observer for sticky header and scroll-to-top button
+// Intersection Observer for Sticky Header and Scroll‑to‑Top Button
 const heroObserver = new IntersectionObserver(
   function (entries) {
     const [entry] = entries;
@@ -70,12 +70,12 @@ const heroObserver = new IntersectionObserver(
 );
 heroObserver.observe(heroSectionEl);
 
-// Scroll-to-top button click
+// Scroll‑to‑Top Button Click
 scrollToTopButton.addEventListener("click", () => {
   window.scrollTo({ top: 0, behavior: "smooth" });
 });
 
-// Testimonials slider logic
+// Testimonials Slider Logic
 const slider = function () {
   let curSlide = 0;
   const maxSlide = slides.length;
