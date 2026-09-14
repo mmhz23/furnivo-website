@@ -1,6 +1,7 @@
 "use strict";
 
 // Selecting Elements
+console.log(document.doctype);
 console.log(document.documentElement);
 console.log(document.head);
 console.log(document.body);
